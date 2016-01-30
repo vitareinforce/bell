@@ -9,12 +9,16 @@ using System.IO.Ports;
 using System.Globalization;
 using System.Data.OleDb;
 using System.Diagnostics;
+using System.Media;
 
 namespace Bell
 {
     public partial class Form1 : Form
     {
         DateTime now = new DateTime();
+
+        SoundPlayer alarmBell = new SoundPlayer(@"alarm\bell.wav");
+
         string clocknow;
         string alarmset;
 
@@ -126,54 +130,67 @@ namespace Bell
             if (alarmset == alarmJamMasuk)
             {
                 alarmStatus.Text = "Jam Masuk";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJamIstirahat)
             {
                 alarmStatus.Text = "Jam Istirahat";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJamPulang)
             {
                 alarmStatus.Text = "Jam Pulang";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam1)
             {
                 alarmStatus.Text = "Jam Ke 1";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam1)
             {
                 alarmStatus.Text = "Jam Ke 1";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam2)
             {
                 alarmStatus.Text = "Jam Ke 2";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam3)
             {
                 alarmStatus.Text = "Jam Ke 3";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam4)
             {
                 alarmStatus.Text = "Jam Ke 4";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam5)
             {
                 alarmStatus.Text = "Jam Ke 5";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam6)
             {
                 alarmStatus.Text = "Jam Ke 6";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam7)
             {
                 alarmStatus.Text = "Jam Ke 7";
+                alarmBell.Play();
             }
             else if (alarmset == alarmJam8)
             {
                 alarmStatus.Text = "Jam Ke 8";
+                alarmBell.Play();
             }
             else
             {
                 alarmStatus.Text = "Alarm off";
+                alarmBell.Stop();
             }
         }
 
@@ -264,6 +281,10 @@ namespace Bell
                 tmp_alarmJamMasuk = DateTime.ParseExact(buff_alarmJamMasuk, "HH:mm", CultureInfo.InvariantCulture);
                 tmp_alarmJamIstirahat = DateTime.ParseExact(buff_alarmJamIstirahat, "HH:mm", CultureInfo.InvariantCulture);
                 tmp_alarmJamPulang = DateTime.ParseExact(buff_alarmJamPulang, "HH:mm", CultureInfo.InvariantCulture);
+            }
+            catch (FormatException format)
+            {
+
             }
             catch (ArgumentOutOfRangeException ex)
             {
