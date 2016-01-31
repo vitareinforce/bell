@@ -1,0 +1,17 @@
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\bin\Debug\Bell.exe
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\bin\Debug\Bell.pdb
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\obj\x86\Debug\Bell.Form1.resources
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\obj\x86\Debug\Bell.Properties.Resources.resources
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\obj\x86\Debug\Bell.csproj.GenerateResource.Cache
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\obj\x86\Debug\Bell.exe
+D:\My Documents\Visual Studio 2010\Projects\Bell\Bell\obj\x86\Debug\Bell.pdb
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.csprojResolveAssemblyReference.cache
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.Form1.resources
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.Properties.Resources.resources
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.csproj.GenerateResource.Cache
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\bin\Debug\Bell.exe.config
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\bin\Debug\Jadwal.accdb
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\bin\Debug\Bell.exe
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\bin\Debug\Bell.pdb
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.exe
+D:\Documents\Visual Studio 2010\Projects\Bell\bell\obj\x86\Debug\Bell.pdb
