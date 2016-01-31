@@ -22,7 +22,6 @@ namespace Bell
         string clocknow;
         string alarmset;
 
-        string alarmJam1;
         string alarmJam2;
         string alarmJam3;
         string alarmJam4;
@@ -35,7 +34,6 @@ namespace Bell
         string alarmJamPulang;
 
         string buff_hari;
-        string buff_alarmJam1;
         string buff_alarmJam2;
         string buff_alarmJam3;
         string buff_alarmJam4;
@@ -47,7 +45,6 @@ namespace Bell
         string buff_alarmJamIstirahat;
         string buff_alarmJamPulang;
 
-        DateTime tmp_alarmJam1 = new DateTime();
         DateTime tmp_alarmJam2 = new DateTime();
         DateTime tmp_alarmJam3 = new DateTime();
         DateTime tmp_alarmJam4 = new DateTime();
@@ -100,7 +97,6 @@ namespace Bell
                 {
                     if (jadwalDataSet.Tables[0].Rows[i]["Hari"].ToString() == now.DayOfWeek.ToString())
                     {
-                        alarmJam1 = Convert.ToDateTime(jadwalDataSet.Tables[0].Rows[i]["Jam 1"].ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                         alarmJam2 = Convert.ToDateTime(jadwalDataSet.Tables[0].Rows[i]["Jam 2"].ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                         alarmJam3 = Convert.ToDateTime(jadwalDataSet.Tables[0].Rows[i]["Jam 3"].ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                         alarmJam4 = Convert.ToDateTime(jadwalDataSet.Tables[0].Rows[i]["Jam 4"].ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
@@ -140,16 +136,6 @@ namespace Bell
             else if (alarmset == alarmJamPulang)
             {
                 alarmStatus.Text = "Jam Pulang";
-                alarmBell.Play();
-            }
-            else if (alarmset == alarmJam1)
-            {
-                alarmStatus.Text = "Jam Ke 1";
-                alarmBell.Play();
-            }
-            else if (alarmset == alarmJam1)
-            {
-                alarmStatus.Text = "Jam Ke 1";
                 alarmBell.Play();
             }
             else if (alarmset == alarmJam2)
@@ -203,7 +189,6 @@ namespace Bell
                     DateTime input_jam_masuk = DateTime.ParseExact(jamMasuk.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_pulang = DateTime.ParseExact(jamPulang.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_istirahat = DateTime.ParseExact(jamIstirahat.Text, "HH:mm", CultureInfo.InvariantCulture);
-                    DateTime input_jam_1 = DateTime.ParseExact(jamKe1.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_2 = DateTime.ParseExact(jamKe2.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_3 = DateTime.ParseExact(jamKe3.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_4 = DateTime.ParseExact(jamKe4.Text, "HH:mm", CultureInfo.InvariantCulture);
@@ -213,7 +198,7 @@ namespace Bell
                     DateTime input_jam_8 = DateTime.ParseExact(jamKe8.Text, "HH:mm", CultureInfo.InvariantCulture);
                     try
                     {
-                        if (this.weeksDBTableAdapter.Insert(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_1, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang) == 1)
+                        if (this.weeksDBTableAdapter.Insert(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang) == 1)
                         {
                             refresh();
                             MessageBox.Show("Input Data Sukses");
@@ -249,7 +234,6 @@ namespace Bell
                 buff_alarmJamMasuk = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[1].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                 buff_alarmJamIstirahat = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[10].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                 buff_alarmJamPulang = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[11].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
-                buff_alarmJam1 = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[2].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                 buff_alarmJam2 = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[3].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                 buff_alarmJam3 = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[4].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
                 buff_alarmJam4 = Convert.ToDateTime(TableJadwalView.Rows[e.RowIndex].Cells[5].Value.ToString(), CultureInfo.InvariantCulture).ToString("HH:mm");
@@ -261,7 +245,6 @@ namespace Bell
                 jamMasuk.Text = buff_alarmJamMasuk;
                 jamIstirahat.Text = buff_alarmJamIstirahat;
                 jamPulang.Text = buff_alarmJamPulang;
-                jamKe1.Text = buff_alarmJam1;
                 jamKe2.Text = buff_alarmJam2;
                 jamKe3.Text = buff_alarmJam3;
                 jamKe4.Text = buff_alarmJam4;
@@ -270,7 +253,6 @@ namespace Bell
                 jamKe7.Text = buff_alarmJam7;
                 jamKe8.Text = buff_alarmJam8;
 
-                tmp_alarmJam1 = DateTime.ParseExact(buff_alarmJam1, "HH:mm", CultureInfo.InvariantCulture);
                 tmp_alarmJam2 = DateTime.ParseExact(buff_alarmJam2, "HH:mm", CultureInfo.InvariantCulture);
                 tmp_alarmJam3 = DateTime.ParseExact(buff_alarmJam3, "HH:mm", CultureInfo.InvariantCulture);
                 tmp_alarmJam4 = DateTime.ParseExact(buff_alarmJam4, "HH:mm", CultureInfo.InvariantCulture);
@@ -301,7 +283,6 @@ namespace Bell
                     DateTime input_jam_masuk = DateTime.ParseExact(jamMasuk.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_pulang = DateTime.ParseExact(jamPulang.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_istirahat = DateTime.ParseExact(jamIstirahat.Text, "HH:mm", CultureInfo.InvariantCulture);
-                    DateTime input_jam_1 = DateTime.ParseExact(jamKe1.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_2 = DateTime.ParseExact(jamKe2.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_3 = DateTime.ParseExact(jamKe3.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_4 = DateTime.ParseExact(jamKe4.Text, "HH:mm", CultureInfo.InvariantCulture);
@@ -311,7 +292,7 @@ namespace Bell
                     DateTime input_jam_8 = DateTime.ParseExact(jamKe8.Text, "HH:mm", CultureInfo.InvariantCulture);
                     try
                     {
-                        if (this.weeksDBTableAdapter.Delete(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_1, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang) == 1)
+                        if (this.weeksDBTableAdapter.Delete(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang) == 1)
                         {
                             refresh();
                             MessageBox.Show("Delete Data Sukses");
@@ -342,7 +323,6 @@ namespace Bell
                     DateTime input_jam_masuk = DateTime.ParseExact(jamMasuk.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_pulang = DateTime.ParseExact(jamPulang.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_istirahat = DateTime.ParseExact(jamIstirahat.Text, "HH:mm", CultureInfo.InvariantCulture);
-                    DateTime input_jam_1 = DateTime.ParseExact(jamKe1.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_2 = DateTime.ParseExact(jamKe2.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_3 = DateTime.ParseExact(jamKe3.Text, "HH:mm", CultureInfo.InvariantCulture);
                     DateTime input_jam_4 = DateTime.ParseExact(jamKe4.Text, "HH:mm", CultureInfo.InvariantCulture);
@@ -352,7 +332,7 @@ namespace Bell
                     DateTime input_jam_8 = DateTime.ParseExact(jamKe8.Text, "HH:mm", CultureInfo.InvariantCulture);
                     try
                     {
-                        if (this.weeksDBTableAdapter.Update(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_1, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang, buff_hari, tmp_alarmJamMasuk, tmp_alarmJam1, tmp_alarmJam2, tmp_alarmJam3, tmp_alarmJam4, tmp_alarmJam5, tmp_alarmJam6, tmp_alarmJam7, tmp_alarmJam8, tmp_alarmJamIstirahat, tmp_alarmJamPulang) == 1)
+                        if (this.weeksDBTableAdapter.Update(hariDalamSeminggu[pilihHari.SelectedIndex], input_jam_masuk, input_jam_2, input_jam_3, input_jam_4, input_jam_5, input_jam_6, input_jam_7, input_jam_8, input_jam_istirahat, input_jam_pulang, buff_hari, tmp_alarmJamMasuk, tmp_alarmJam2, tmp_alarmJam3, tmp_alarmJam4, tmp_alarmJam5, tmp_alarmJam6, tmp_alarmJam7, tmp_alarmJam8, tmp_alarmJamIstirahat, tmp_alarmJamPulang) == 1)
                         {
                             refresh();
                             MessageBox.Show("Update Data Sukses");

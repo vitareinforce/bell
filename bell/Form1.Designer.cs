@@ -39,14 +39,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Days = new System.Windows.Forms.Label();
             this.Clock = new System.Windows.Forms.Timer(this.components);
             this.Jam = new System.Windows.Forms.Label();
             this.TableJadwalView = new System.Windows.Forms.DataGridView();
             this.hariDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jamMasukDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jam1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jam2DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jam3DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jam4DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +56,6 @@
             this.jamPulangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weeksDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jadwalDataSet = new Bell.JadwalDataSet();
-            this.jamKe1 = new System.Windows.Forms.TextBox();
             this.jamKe2 = new System.Windows.Forms.TextBox();
             this.jamKe3 = new System.Windows.Forms.TextBox();
             this.jamKe4 = new System.Windows.Forms.TextBox();
@@ -69,7 +66,6 @@
             this.jamMasuk = new System.Windows.Forms.TextBox();
             this.jamPulang = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -81,11 +77,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.jamIstirahat = new System.Windows.Forms.TextBox();
             this.inputData = new System.Windows.Forms.Button();
-            this.weeksDBTableAdapter = new Bell.JadwalDataSetTableAdapters.WeeksDBTableAdapter();
             this.alarmStatus = new System.Windows.Forms.Label();
             this.pilihHari = new System.Windows.Forms.ComboBox();
             this.deleteData = new System.Windows.Forms.Button();
             this.updateData = new System.Windows.Forms.Button();
+            this.weeksDBTableAdapter = new Bell.JadwalDataSetTableAdapters.WeeksDBTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.TableJadwalView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weeksDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jadwalDataSet)).BeginInit();
@@ -124,7 +120,6 @@
             this.TableJadwalView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.hariDataGridViewTextBoxColumn,
             this.jamMasukDataGridViewTextBoxColumn,
-            this.jam1DataGridViewTextBoxColumn,
             this.jam2DataGridViewTextBoxColumn,
             this.jam3DataGridViewTextBoxColumn,
             this.jam4DataGridViewTextBoxColumn,
@@ -142,7 +137,7 @@
             this.TableJadwalView.RowTemplate.ReadOnly = true;
             this.TableJadwalView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.TableJadwalView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.TableJadwalView.Size = new System.Drawing.Size(1247, 224);
+            this.TableJadwalView.Size = new System.Drawing.Size(1160, 224);
             this.TableJadwalView.TabIndex = 4;
             this.TableJadwalView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TableJadwalView_CellClick);
             // 
@@ -163,22 +158,12 @@
             this.jamMasukDataGridViewTextBoxColumn.Name = "jamMasukDataGridViewTextBoxColumn";
             this.jamMasukDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // jam1DataGridViewTextBoxColumn
-            // 
-            this.jam1DataGridViewTextBoxColumn.DataPropertyName = "Jam 1";
-            dataGridViewCellStyle2.Format = "HH:mm";
-            dataGridViewCellStyle2.NullValue = null;
-            this.jam1DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.jam1DataGridViewTextBoxColumn.HeaderText = "Jam 1";
-            this.jam1DataGridViewTextBoxColumn.Name = "jam1DataGridViewTextBoxColumn";
-            this.jam1DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // jam2DataGridViewTextBoxColumn
             // 
             this.jam2DataGridViewTextBoxColumn.DataPropertyName = "Jam 2";
-            dataGridViewCellStyle3.Format = "HH:mm";
-            dataGridViewCellStyle3.NullValue = null;
-            this.jam2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Format = "HH:mm";
+            dataGridViewCellStyle2.NullValue = null;
+            this.jam2DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.jam2DataGridViewTextBoxColumn.HeaderText = "Jam 2";
             this.jam2DataGridViewTextBoxColumn.Name = "jam2DataGridViewTextBoxColumn";
             this.jam2DataGridViewTextBoxColumn.ReadOnly = true;
@@ -186,9 +171,9 @@
             // jam3DataGridViewTextBoxColumn
             // 
             this.jam3DataGridViewTextBoxColumn.DataPropertyName = "Jam 3";
-            dataGridViewCellStyle4.Format = "HH:mm";
-            dataGridViewCellStyle4.NullValue = null;
-            this.jam3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Format = "HH:mm";
+            dataGridViewCellStyle3.NullValue = null;
+            this.jam3DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.jam3DataGridViewTextBoxColumn.HeaderText = "Jam 3";
             this.jam3DataGridViewTextBoxColumn.Name = "jam3DataGridViewTextBoxColumn";
             this.jam3DataGridViewTextBoxColumn.ReadOnly = true;
@@ -196,8 +181,8 @@
             // jam4DataGridViewTextBoxColumn
             // 
             this.jam4DataGridViewTextBoxColumn.DataPropertyName = "Jam 4";
-            dataGridViewCellStyle5.Format = "HH:mm";
-            this.jam4DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Format = "HH:mm";
+            this.jam4DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.jam4DataGridViewTextBoxColumn.HeaderText = "Jam 4";
             this.jam4DataGridViewTextBoxColumn.Name = "jam4DataGridViewTextBoxColumn";
             this.jam4DataGridViewTextBoxColumn.ReadOnly = true;
@@ -205,8 +190,8 @@
             // jam5DataGridViewTextBoxColumn
             // 
             this.jam5DataGridViewTextBoxColumn.DataPropertyName = "Jam 5";
-            dataGridViewCellStyle6.Format = "HH:mm";
-            this.jam5DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Format = "HH:mm";
+            this.jam5DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.jam5DataGridViewTextBoxColumn.HeaderText = "Jam 5";
             this.jam5DataGridViewTextBoxColumn.Name = "jam5DataGridViewTextBoxColumn";
             this.jam5DataGridViewTextBoxColumn.ReadOnly = true;
@@ -214,8 +199,8 @@
             // jam6DataGridViewTextBoxColumn
             // 
             this.jam6DataGridViewTextBoxColumn.DataPropertyName = "Jam 6";
-            dataGridViewCellStyle7.Format = "HH:mm";
-            this.jam6DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Format = "HH:mm";
+            this.jam6DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.jam6DataGridViewTextBoxColumn.HeaderText = "Jam 6";
             this.jam6DataGridViewTextBoxColumn.Name = "jam6DataGridViewTextBoxColumn";
             this.jam6DataGridViewTextBoxColumn.ReadOnly = true;
@@ -223,8 +208,8 @@
             // jam7DataGridViewTextBoxColumn
             // 
             this.jam7DataGridViewTextBoxColumn.DataPropertyName = "Jam 7";
-            dataGridViewCellStyle8.Format = "HH:mm";
-            this.jam7DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Format = "HH:mm";
+            this.jam7DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.jam7DataGridViewTextBoxColumn.HeaderText = "Jam 7";
             this.jam7DataGridViewTextBoxColumn.Name = "jam7DataGridViewTextBoxColumn";
             this.jam7DataGridViewTextBoxColumn.ReadOnly = true;
@@ -232,8 +217,8 @@
             // jam8DataGridViewTextBoxColumn
             // 
             this.jam8DataGridViewTextBoxColumn.DataPropertyName = "Jam 8";
-            dataGridViewCellStyle9.Format = "HH:mm";
-            this.jam8DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Format = "HH:mm";
+            this.jam8DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.jam8DataGridViewTextBoxColumn.HeaderText = "Jam 8";
             this.jam8DataGridViewTextBoxColumn.Name = "jam8DataGridViewTextBoxColumn";
             this.jam8DataGridViewTextBoxColumn.ReadOnly = true;
@@ -241,8 +226,8 @@
             // istirahatDataGridViewTextBoxColumn
             // 
             this.istirahatDataGridViewTextBoxColumn.DataPropertyName = "Istirahat";
-            dataGridViewCellStyle10.Format = "HH:mm";
-            this.istirahatDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle9.Format = "HH:mm";
+            this.istirahatDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
             this.istirahatDataGridViewTextBoxColumn.HeaderText = "Istirahat";
             this.istirahatDataGridViewTextBoxColumn.Name = "istirahatDataGridViewTextBoxColumn";
             this.istirahatDataGridViewTextBoxColumn.ReadOnly = true;
@@ -250,9 +235,9 @@
             // jamPulangDataGridViewTextBoxColumn
             // 
             this.jamPulangDataGridViewTextBoxColumn.DataPropertyName = "Jam Pulang";
-            dataGridViewCellStyle11.Format = "HH:mm";
-            dataGridViewCellStyle11.NullValue = null;
-            this.jamPulangDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.Format = "HH:mm";
+            dataGridViewCellStyle10.NullValue = null;
+            this.jamPulangDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.jamPulangDataGridViewTextBoxColumn.HeaderText = "Jam Pulang";
             this.jamPulangDataGridViewTextBoxColumn.Name = "jamPulangDataGridViewTextBoxColumn";
             this.jamPulangDataGridViewTextBoxColumn.ReadOnly = true;
@@ -267,30 +252,23 @@
             this.jadwalDataSet.DataSetName = "JadwalDataSet";
             this.jadwalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // jamKe1
-            // 
-            this.jamKe1.Location = new System.Drawing.Point(605, 378);
-            this.jamKe1.Name = "jamKe1";
-            this.jamKe1.Size = new System.Drawing.Size(100, 20);
-            this.jamKe1.TabIndex = 5;
-            // 
             // jamKe2
             // 
-            this.jamKe2.Location = new System.Drawing.Point(605, 404);
+            this.jamKe2.Location = new System.Drawing.Point(605, 378);
             this.jamKe2.Name = "jamKe2";
             this.jamKe2.Size = new System.Drawing.Size(100, 20);
             this.jamKe2.TabIndex = 6;
             // 
             // jamKe3
             // 
-            this.jamKe3.Location = new System.Drawing.Point(605, 430);
+            this.jamKe3.Location = new System.Drawing.Point(605, 404);
             this.jamKe3.Name = "jamKe3";
             this.jamKe3.Size = new System.Drawing.Size(100, 20);
             this.jamKe3.TabIndex = 7;
             // 
             // jamKe4
             // 
-            this.jamKe4.Location = new System.Drawing.Point(605, 456);
+            this.jamKe4.Location = new System.Drawing.Point(605, 430);
             this.jamKe4.Name = "jamKe4";
             this.jamKe4.Size = new System.Drawing.Size(100, 20);
             this.jamKe4.TabIndex = 8;
@@ -346,19 +324,10 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Jam Masuk";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(538, 381);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Jam Ke 1";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(538, 407);
+            this.label3.Location = new System.Drawing.Point(538, 381);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(51, 13);
             this.label3.TabIndex = 17;
@@ -367,7 +336,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(538, 433);
+            this.label4.Location = new System.Drawing.Point(538, 407);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 18;
@@ -376,7 +345,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(538, 459);
+            this.label5.Location = new System.Drawing.Point(538, 433);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 19;
@@ -431,7 +400,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(344, 430);
+            this.label11.Location = new System.Drawing.Point(538, 459);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 26;
@@ -439,7 +408,7 @@
             // 
             // jamIstirahat
             // 
-            this.jamIstirahat.Location = new System.Drawing.Point(411, 427);
+            this.jamIstirahat.Location = new System.Drawing.Point(605, 456);
             this.jamIstirahat.Name = "jamIstirahat";
             this.jamIstirahat.Size = new System.Drawing.Size(100, 20);
             this.jamIstirahat.TabIndex = 25;
@@ -453,10 +422,6 @@
             this.inputData.Text = "Input Data";
             this.inputData.UseVisualStyleBackColor = true;
             this.inputData.Click += new System.EventHandler(this.InputJam_Click);
-            // 
-            // weeksDBTableAdapter
-            // 
-            this.weeksDBTableAdapter.ClearBeforeFill = true;
             // 
             // alarmStatus
             // 
@@ -503,11 +468,15 @@
             this.updateData.UseVisualStyleBackColor = true;
             this.updateData.Click += new System.EventHandler(this.updateData_Click);
             // 
+            // weeksDBTableAdapter
+            // 
+            this.weeksDBTableAdapter.ClearBeforeFill = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1307, 519);
+            this.ClientSize = new System.Drawing.Size(1225, 519);
             this.Controls.Add(this.updateData);
             this.Controls.Add(this.deleteData);
             this.Controls.Add(this.pilihHari);
@@ -523,7 +492,6 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.jamPulang);
             this.Controls.Add(this.jamMasuk);
@@ -534,7 +502,6 @@
             this.Controls.Add(this.jamKe4);
             this.Controls.Add(this.jamKe3);
             this.Controls.Add(this.jamKe2);
-            this.Controls.Add(this.jamKe1);
             this.Controls.Add(this.TableJadwalView);
             this.Controls.Add(this.Jam);
             this.Controls.Add(this.Days);
@@ -558,7 +525,6 @@
         private JadwalDataSet jadwalDataSet;
         private System.Windows.Forms.BindingSource weeksDBBindingSource;
         private JadwalDataSetTableAdapters.WeeksDBTableAdapter weeksDBTableAdapter;
-        private System.Windows.Forms.TextBox jamKe1;
         private System.Windows.Forms.TextBox jamKe2;
         private System.Windows.Forms.TextBox jamKe3;
         private System.Windows.Forms.TextBox jamKe4;
@@ -569,7 +535,6 @@
         private System.Windows.Forms.TextBox jamMasuk;
         private System.Windows.Forms.TextBox jamPulang;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -585,7 +550,6 @@
         private System.Windows.Forms.ComboBox pilihHari;
         private System.Windows.Forms.DataGridViewTextBoxColumn hariDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jamMasukDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jam1DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jam2DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jam3DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn jam4DataGridViewTextBoxColumn;

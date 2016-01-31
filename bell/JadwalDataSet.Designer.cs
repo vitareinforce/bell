@@ -283,8 +283,6 @@ namespace Bell {
             
             private global::System.Data.DataColumn columnJam_Masuk;
             
-            private global::System.Data.DataColumn columnJam_1;
-            
             private global::System.Data.DataColumn columnJam_2;
             
             private global::System.Data.DataColumn columnJam_3;
@@ -349,14 +347,6 @@ namespace Bell {
             public global::System.Data.DataColumn Jam_MasukColumn {
                 get {
                     return this.columnJam_Masuk;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Jam_1Column {
-                get {
-                    return this.columnJam_1;
                 }
             }
             
@@ -469,12 +459,11 @@ namespace Bell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public WeeksDBRow AddWeeksDBRow(string Hari, System.DateTime Jam_Masuk, System.DateTime Jam_1, System.DateTime Jam_2, System.DateTime Jam_3, System.DateTime Jam_4, System.DateTime Jam_5, System.DateTime Jam_6, System.DateTime Jam_7, System.DateTime Jam_8, System.DateTime Istirahat, System.DateTime Jam_Pulang) {
+            public WeeksDBRow AddWeeksDBRow(string Hari, System.DateTime Jam_Masuk, System.DateTime Jam_2, System.DateTime Jam_3, System.DateTime Jam_4, System.DateTime Jam_5, System.DateTime Jam_6, System.DateTime Jam_7, System.DateTime Jam_8, System.DateTime Istirahat, System.DateTime Jam_Pulang) {
                 WeeksDBRow rowWeeksDBRow = ((WeeksDBRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Hari,
                         Jam_Masuk,
-                        Jam_1,
                         Jam_2,
                         Jam_3,
                         Jam_4,
@@ -521,7 +510,6 @@ namespace Bell {
             internal void InitVars() {
                 this.columnHari = base.Columns["Hari"];
                 this.columnJam_Masuk = base.Columns["Jam Masuk"];
-                this.columnJam_1 = base.Columns["Jam 1"];
                 this.columnJam_2 = base.Columns["Jam 2"];
                 this.columnJam_3 = base.Columns["Jam 3"];
                 this.columnJam_4 = base.Columns["Jam 4"];
@@ -540,8 +528,6 @@ namespace Bell {
                 base.Columns.Add(this.columnHari);
                 this.columnJam_Masuk = new global::System.Data.DataColumn("Jam Masuk", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJam_Masuk);
-                this.columnJam_1 = new global::System.Data.DataColumn("Jam 1", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnJam_1);
                 this.columnJam_2 = new global::System.Data.DataColumn("Jam 2", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnJam_2);
                 this.columnJam_3 = new global::System.Data.DataColumn("Jam 3", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
@@ -734,22 +720,6 @@ namespace Bell {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime Jam_1 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableWeeksDB.Jam_1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Jam 1\' in table \'WeeksDB\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableWeeksDB.Jam_1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime Jam_2 {
                 get {
                     try {
@@ -902,18 +872,6 @@ namespace Bell {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetJam_MasukNull() {
                 this[this.tableWeeksDB.Jam_MasukColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsJam_1Null() {
-                return this.IsNull(this.tableWeeksDB.Jam_1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetJam_1Null() {
-                this[this.tableWeeksDB.Jam_1Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1186,7 +1144,6 @@ namespace Bell.JadwalDataSetTableAdapters {
             tableMapping.DataSetTable = "WeeksDB";
             tableMapping.ColumnMappings.Add("Hari", "Hari");
             tableMapping.ColumnMappings.Add("Jam Masuk", "Jam Masuk");
-            tableMapping.ColumnMappings.Add("Jam 1", "Jam 1");
             tableMapping.ColumnMappings.Add("Jam 2", "Jam 2");
             tableMapping.ColumnMappings.Add("Jam 3", "Jam 3");
             tableMapping.ColumnMappings.Add("Jam 4", "Jam 4");
@@ -1199,13 +1156,11 @@ namespace Bell.JadwalDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `WeeksDB` WHERE ((`Hari` = ?) AND ((? = 1 AND `Jam Masuk` IS NULL) OR (`Jam Masuk` = ?)) AND ((? = 1 AND `Jam 1` IS NULL) OR (`Jam 1` = ?)) AND ((? = 1 AND `Jam 2` IS NULL) OR (`Jam 2` = ?)) AND ((? = 1 AND `Jam 3` IS NULL) OR (`Jam 3` = ?)) AND ((? = 1 AND `Jam 4` IS NULL) OR (`Jam 4` = ?)) AND ((? = 1 AND `Jam 5` IS NULL) OR (`Jam 5` = ?)) AND ((? = 1 AND `Jam 6` IS NULL) OR (`Jam 6` = ?)) AND ((? = 1 AND `Jam 7` IS NULL) OR (`Jam 7` = ?)) AND ((? = 1 AND `Jam 8` IS NULL) OR (`Jam 8` = ?)) AND ((? = 1 AND `Istirahat` IS NULL) OR (`Istirahat` = ?)) AND ((? = 1 AND `Jam Pulang` IS NULL) OR (`Jam Pulang` = ?)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM `WeeksDB` WHERE ((`Hari` = ?) AND ((? = 1 AND `Jam Masuk` IS NULL) OR (`Jam Masuk` = ?)) AND ((? = 1 AND `Jam 2` IS NULL) OR (`Jam 2` = ?)) AND ((? = 1 AND `Jam 3` IS NULL) OR (`Jam 3` = ?)) AND ((? = 1 AND `Jam 4` IS NULL) OR (`Jam 4` = ?)) AND ((? = 1 AND `Jam 5` IS NULL) OR (`Jam 5` = ?)) AND ((? = 1 AND `Jam 6` IS NULL) OR (`Jam 6` = ?)) AND ((? = 1 AND `Jam 7` IS NULL) OR (`Jam 7` = ?)) AND ((? = 1 AND `Jam 8` IS NULL) OR (`Jam 8` = ?)) AND ((? = 1 AND `Istirahat` IS NULL) OR (`Istirahat` = ?)) AND ((? = 1 AND `Jam Pulang` IS NULL) OR (`Jam Pulang` = ?)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Hari", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hari", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_Masuk", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_Masuk", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_2", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 3", global::System.Data.DataRowVersion.Original, true, null));
@@ -1226,13 +1181,12 @@ namespace Bell.JadwalDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_Pulang", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Pulang", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.InsertCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `WeeksDB` (`Hari`, `Jam Masuk`, `Jam 1`, `Jam 2`, `Jam 3`, `Jam 4`, `" +
-                "Jam 5`, `Jam 6`, `Jam 7`, `Jam 8`, `Istirahat`, `Jam Pulang`) VALUES (?, ?, ?, ?" +
-                ", ?, ?, ?, ?, ?, ?, ?, ?)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `WeeksDB` (`Hari`, `Jam Masuk`, `Jam 2`, `Jam 3`, `Jam 4`, `Jam 5`, `" +
+                "Jam 6`, `Jam 7`, `Jam 8`, `Istirahat`, `Jam Pulang`) VALUES (?, ?, ?, ?, ?, ?, ?" +
+                ", ?, ?, ?, ?)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Hari", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hari", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_Masuk", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_2", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_3", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 3", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_4", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 4", global::System.Data.DataRowVersion.Current, false, null));
@@ -1244,11 +1198,10 @@ namespace Bell.JadwalDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_Pulang", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Pulang", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand = new global::System.Data.OleDb.OleDbCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE `WeeksDB` SET `Hari` = ?, `Jam Masuk` = ?, `Jam 1` = ?, `Jam 2` = ?, `Jam 3` = ?, `Jam 4` = ?, `Jam 5` = ?, `Jam 6` = ?, `Jam 7` = ?, `Jam 8` = ?, `Istirahat` = ?, `Jam Pulang` = ? WHERE ((`Hari` = ?) AND ((? = 1 AND `Jam Masuk` IS NULL) OR (`Jam Masuk` = ?)) AND ((? = 1 AND `Jam 1` IS NULL) OR (`Jam 1` = ?)) AND ((? = 1 AND `Jam 2` IS NULL) OR (`Jam 2` = ?)) AND ((? = 1 AND `Jam 3` IS NULL) OR (`Jam 3` = ?)) AND ((? = 1 AND `Jam 4` IS NULL) OR (`Jam 4` = ?)) AND ((? = 1 AND `Jam 5` IS NULL) OR (`Jam 5` = ?)) AND ((? = 1 AND `Jam 6` IS NULL) OR (`Jam 6` = ?)) AND ((? = 1 AND `Jam 7` IS NULL) OR (`Jam 7` = ?)) AND ((? = 1 AND `Jam 8` IS NULL) OR (`Jam 8` = ?)) AND ((? = 1 AND `Istirahat` IS NULL) OR (`Istirahat` = ?)) AND ((? = 1 AND `Jam Pulang` IS NULL) OR (`Jam Pulang` = ?)))";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE `WeeksDB` SET `Hari` = ?, `Jam Masuk` = ?, `Jam 2` = ?, `Jam 3` = ?, `Jam 4` = ?, `Jam 5` = ?, `Jam 6` = ?, `Jam 7` = ?, `Jam 8` = ?, `Istirahat` = ?, `Jam Pulang` = ? WHERE ((`Hari` = ?) AND ((? = 1 AND `Jam Masuk` IS NULL) OR (`Jam Masuk` = ?)) AND ((? = 1 AND `Jam 2` IS NULL) OR (`Jam 2` = ?)) AND ((? = 1 AND `Jam 3` IS NULL) OR (`Jam 3` = ?)) AND ((? = 1 AND `Jam 4` IS NULL) OR (`Jam 4` = ?)) AND ((? = 1 AND `Jam 5` IS NULL) OR (`Jam 5` = ?)) AND ((? = 1 AND `Jam 6` IS NULL) OR (`Jam 6` = ?)) AND ((? = 1 AND `Jam 7` IS NULL) OR (`Jam 7` = ?)) AND ((? = 1 AND `Jam 8` IS NULL) OR (`Jam 8` = ?)) AND ((? = 1 AND `Istirahat` IS NULL) OR (`Istirahat` = ?)) AND ((? = 1 AND `Jam Pulang` IS NULL) OR (`Jam Pulang` = ?)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Hari", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hari", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_Masuk", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Current, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_2", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_3", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 3", global::System.Data.DataRowVersion.Current, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Jam_4", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 4", global::System.Data.DataRowVersion.Current, false, null));
@@ -1261,8 +1214,6 @@ namespace Bell.JadwalDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Hari", global::System.Data.OleDb.OleDbType.VarWChar, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Hari", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_Masuk", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_Masuk", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam Masuk", global::System.Data.DataRowVersion.Original, false, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_1", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Original, true, null));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_1", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 1", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_2", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Original, true, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_Jam_2", global::System.Data.OleDb.OleDbType.Date, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 2", global::System.Data.DataRowVersion.Original, false, null));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.OleDb.OleDbParameter("IsNull_Jam_3", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Jam 3", global::System.Data.DataRowVersion.Original, true, null));
@@ -1296,8 +1247,8 @@ namespace Bell.JadwalDataSetTableAdapters {
             this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Hari, [Jam Masuk], [Jam 1], [Jam 2], [Jam 3], [Jam 4], [Jam 5], [Jam 6], [" +
-                "Jam 7], [Jam 8], Istirahat, [Jam Pulang] FROM WeeksDB";
+            this._commandCollection[0].CommandText = "SELECT Hari, [Jam Masuk], [Jam 2], [Jam 3], [Jam 4], [Jam 5], [Jam 6], [Jam 7], [" +
+                "Jam 8], Istirahat, [Jam Pulang] FROM WeeksDB";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1358,7 +1309,7 @@ namespace Bell.JadwalDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_Hari, global::System.Nullable<global::System.DateTime> Original_Jam_Masuk, global::System.Nullable<global::System.DateTime> Original_Jam_1, global::System.Nullable<global::System.DateTime> Original_Jam_2, global::System.Nullable<global::System.DateTime> Original_Jam_3, global::System.Nullable<global::System.DateTime> Original_Jam_4, global::System.Nullable<global::System.DateTime> Original_Jam_5, global::System.Nullable<global::System.DateTime> Original_Jam_6, global::System.Nullable<global::System.DateTime> Original_Jam_7, global::System.Nullable<global::System.DateTime> Original_Jam_8, global::System.Nullable<global::System.DateTime> Original_Istirahat, global::System.Nullable<global::System.DateTime> Original_Jam_Pulang) {
+        public virtual int Delete(string Original_Hari, global::System.Nullable<global::System.DateTime> Original_Jam_Masuk, global::System.Nullable<global::System.DateTime> Original_Jam_2, global::System.Nullable<global::System.DateTime> Original_Jam_3, global::System.Nullable<global::System.DateTime> Original_Jam_4, global::System.Nullable<global::System.DateTime> Original_Jam_5, global::System.Nullable<global::System.DateTime> Original_Jam_6, global::System.Nullable<global::System.DateTime> Original_Jam_7, global::System.Nullable<global::System.DateTime> Original_Jam_8, global::System.Nullable<global::System.DateTime> Original_Istirahat, global::System.Nullable<global::System.DateTime> Original_Jam_Pulang) {
             if ((Original_Hari == null)) {
                 this.Adapter.DeleteCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1373,85 +1324,77 @@ namespace Bell.JadwalDataSetTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_1.HasValue == true)) {
+            if ((Original_Jam_2.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Jam_1.Value));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_Jam_2.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_2.HasValue == true)) {
+            if ((Original_Jam_3.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Jam_2.Value));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_Jam_3.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_3.HasValue == true)) {
+            if ((Original_Jam_4.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Jam_3.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Jam_4.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_4.HasValue == true)) {
+            if ((Original_Jam_5.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Jam_4.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_Jam_5.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_5.HasValue == true)) {
+            if ((Original_Jam_6.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Jam_5.Value));
+                this.Adapter.DeleteCommand.Parameters[12].Value = ((System.DateTime)(Original_Jam_6.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_6.HasValue == true)) {
+            if ((Original_Jam_7.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Jam_6.Value));
+                this.Adapter.DeleteCommand.Parameters[14].Value = ((System.DateTime)(Original_Jam_7.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[13].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_7.HasValue == true)) {
+            if ((Original_Jam_8.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_Jam_7.Value));
+                this.Adapter.DeleteCommand.Parameters[16].Value = ((System.DateTime)(Original_Jam_8.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[15].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((Original_Jam_8.HasValue == true)) {
+            if ((Original_Istirahat.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_Jam_8.Value));
+                this.Adapter.DeleteCommand.Parameters[18].Value = ((System.DateTime)(Original_Istirahat.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[17].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((Original_Istirahat.HasValue == true)) {
+            if ((Original_Jam_Pulang.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_Istirahat.Value));
+                this.Adapter.DeleteCommand.Parameters[20].Value = ((System.DateTime)(Original_Jam_Pulang.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[19].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[20].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Jam_Pulang.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[22].Value = ((System.DateTime)(Original_Jam_Pulang.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1473,7 +1416,7 @@ namespace Bell.JadwalDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Hari, global::System.Nullable<global::System.DateTime> Jam_Masuk, global::System.Nullable<global::System.DateTime> Jam_1, global::System.Nullable<global::System.DateTime> Jam_2, global::System.Nullable<global::System.DateTime> Jam_3, global::System.Nullable<global::System.DateTime> Jam_4, global::System.Nullable<global::System.DateTime> Jam_5, global::System.Nullable<global::System.DateTime> Jam_6, global::System.Nullable<global::System.DateTime> Jam_7, global::System.Nullable<global::System.DateTime> Jam_8, global::System.Nullable<global::System.DateTime> Istirahat, global::System.Nullable<global::System.DateTime> Jam_Pulang) {
+        public virtual int Insert(string Hari, global::System.Nullable<global::System.DateTime> Jam_Masuk, global::System.Nullable<global::System.DateTime> Jam_2, global::System.Nullable<global::System.DateTime> Jam_3, global::System.Nullable<global::System.DateTime> Jam_4, global::System.Nullable<global::System.DateTime> Jam_5, global::System.Nullable<global::System.DateTime> Jam_6, global::System.Nullable<global::System.DateTime> Jam_7, global::System.Nullable<global::System.DateTime> Jam_8, global::System.Nullable<global::System.DateTime> Istirahat, global::System.Nullable<global::System.DateTime> Jam_Pulang) {
             if ((Hari == null)) {
                 this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
@@ -1486,65 +1429,59 @@ namespace Bell.JadwalDataSetTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Jam_1.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Jam_1.Value));
+            if ((Jam_2.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(Jam_2.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Jam_2.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Jam_2.Value));
+            if ((Jam_3.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(Jam_3.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Jam_3.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Jam_3.Value));
+            if ((Jam_4.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Jam_4.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Jam_4.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Jam_4.Value));
+            if ((Jam_5.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Jam_5.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Jam_5.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Jam_5.Value));
+            if ((Jam_6.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[6].Value = ((System.DateTime)(Jam_6.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Jam_6.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Jam_6.Value));
+            if ((Jam_7.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((System.DateTime)(Jam_7.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Jam_7.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Jam_7.Value));
+            if ((Jam_8.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((System.DateTime)(Jam_8.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Jam_8.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Jam_8.Value));
+            if ((Istirahat.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((System.DateTime)(Istirahat.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Istirahat.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Istirahat.Value));
+            if ((Jam_Pulang.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[10].Value = ((System.DateTime)(Jam_Pulang.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Jam_Pulang.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(Jam_Pulang.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1569,7 +1506,6 @@ namespace Bell.JadwalDataSetTableAdapters {
         public virtual int Update(
                     string Hari, 
                     global::System.Nullable<global::System.DateTime> Jam_Masuk, 
-                    global::System.Nullable<global::System.DateTime> Jam_1, 
                     global::System.Nullable<global::System.DateTime> Jam_2, 
                     global::System.Nullable<global::System.DateTime> Jam_3, 
                     global::System.Nullable<global::System.DateTime> Jam_4, 
@@ -1581,7 +1517,6 @@ namespace Bell.JadwalDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Jam_Pulang, 
                     string Original_Hari, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_Masuk, 
-                    global::System.Nullable<global::System.DateTime> Original_Jam_1, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_2, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_3, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_4, 
@@ -1603,159 +1538,145 @@ namespace Bell.JadwalDataSetTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((Jam_1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Jam_1.Value));
+            if ((Jam_2.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(Jam_2.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Jam_2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Jam_2.Value));
+            if ((Jam_3.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(Jam_3.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Jam_3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Jam_3.Value));
+            if ((Jam_4.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Jam_4.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Jam_4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Jam_4.Value));
+            if ((Jam_5.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Jam_5.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Jam_5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Jam_5.Value));
+            if ((Jam_6.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Jam_6.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Jam_6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Jam_6.Value));
+            if ((Jam_7.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Jam_7.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Jam_7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Jam_7.Value));
+            if ((Jam_8.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Jam_8.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Jam_8.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Jam_8.Value));
+            if ((Istirahat.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((System.DateTime)(Istirahat.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Istirahat.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Istirahat.Value));
+            if ((Jam_Pulang.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Jam_Pulang.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((Jam_Pulang.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(Jam_Pulang.Value));
-            }
-            else {
+            if ((Original_Hari == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
-            if ((Original_Hari == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Hari));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Hari));
             }
             if ((Original_Jam_Masuk.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((System.DateTime)(Original_Jam_Masuk.Value));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Jam_Masuk.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Jam_1.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((System.DateTime)(Original_Jam_1.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_2.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((System.DateTime)(Original_Jam_2.Value));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Jam_2.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_3.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_Jam_3.Value));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((System.DateTime)(Original_Jam_3.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_4.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_Jam_4.Value));
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((System.DateTime)(Original_Jam_4.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_5.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((System.DateTime)(Original_Jam_5.Value));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_Jam_5.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_6.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((System.DateTime)(Original_Jam_6.Value));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_Jam_6.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_7.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((System.DateTime)(Original_Jam_7.Value));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((System.DateTime)(Original_Jam_7.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[28].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_8.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((System.DateTime)(Original_Jam_8.Value));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((System.DateTime)(Original_Jam_8.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             if ((Original_Istirahat.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[32].Value = ((System.DateTime)(Original_Istirahat.Value));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((System.DateTime)(Original_Istirahat.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[32].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             if ((Original_Jam_Pulang.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[34].Value = ((System.DateTime)(Original_Jam_Pulang.Value));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[31].Value = ((System.DateTime)(Original_Jam_Pulang.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[33].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[34].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[31].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -1779,7 +1700,6 @@ namespace Bell.JadwalDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
                     global::System.Nullable<global::System.DateTime> Jam_Masuk, 
-                    global::System.Nullable<global::System.DateTime> Jam_1, 
                     global::System.Nullable<global::System.DateTime> Jam_2, 
                     global::System.Nullable<global::System.DateTime> Jam_3, 
                     global::System.Nullable<global::System.DateTime> Jam_4, 
@@ -1791,7 +1711,6 @@ namespace Bell.JadwalDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Jam_Pulang, 
                     string Original_Hari, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_Masuk, 
-                    global::System.Nullable<global::System.DateTime> Original_Jam_1, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_2, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_3, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_4, 
@@ -1801,7 +1720,7 @@ namespace Bell.JadwalDataSetTableAdapters {
                     global::System.Nullable<global::System.DateTime> Original_Jam_8, 
                     global::System.Nullable<global::System.DateTime> Original_Istirahat, 
                     global::System.Nullable<global::System.DateTime> Original_Jam_Pulang) {
-            return this.Update(Original_Hari, Jam_Masuk, Jam_1, Jam_2, Jam_3, Jam_4, Jam_5, Jam_6, Jam_7, Jam_8, Istirahat, Jam_Pulang, Original_Hari, Original_Jam_Masuk, Original_Jam_1, Original_Jam_2, Original_Jam_3, Original_Jam_4, Original_Jam_5, Original_Jam_6, Original_Jam_7, Original_Jam_8, Original_Istirahat, Original_Jam_Pulang);
+            return this.Update(Original_Hari, Jam_Masuk, Jam_2, Jam_3, Jam_4, Jam_5, Jam_6, Jam_7, Jam_8, Istirahat, Jam_Pulang, Original_Hari, Original_Jam_Masuk, Original_Jam_2, Original_Jam_3, Original_Jam_4, Original_Jam_5, Original_Jam_6, Original_Jam_7, Original_Jam_8, Original_Istirahat, Original_Jam_Pulang);
         }
     }
     
