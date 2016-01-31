@@ -147,11 +147,6 @@ namespace Bell
                 alarmStatus.Text = "Jam Ke 1";
                 alarmBell.Play();
             }
-            else if (alarmset == alarmJam1)
-            {
-                alarmStatus.Text = "Jam Ke 1";
-                alarmBell.Play();
-            }
             else if (alarmset == alarmJam2)
             {
                 alarmStatus.Text = "Jam Ke 2";
