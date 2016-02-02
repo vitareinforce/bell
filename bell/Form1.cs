@@ -131,57 +131,57 @@ namespace Bell
             if (alarmset == alarmJamMasuk)
             {
                 alarmStatus.Text = "Jam Masuk";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJamMasuk  + ":00");
             }
             else if (alarmset == alarmJamIstirahat)
             {
                 alarmStatus.Text = "Jam Istirahat";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJamIstirahat + ":00");
             }
             else if (alarmset == alarmJamPulang)
             {
                 alarmStatus.Text = "Jam Pulang";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJamPulang + ":00");
             }
             else if (alarmset == alarmJam1)
             {
                 alarmStatus.Text = "Jam Ke 1";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam1 + ":00");
             }
             else if (alarmset == alarmJam2)
             {
                 alarmStatus.Text = "Jam Ke 2";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam2 + ":00");
             }
             else if (alarmset == alarmJam3)
             {
                 alarmStatus.Text = "Jam Ke 3";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam3 + ":00");
             }
             else if (alarmset == alarmJam4)
             {
                 alarmStatus.Text = "Jam Ke 4";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam4 + ":00");
             }
             else if (alarmset == alarmJam5)
             {
                 alarmStatus.Text = "Jam Ke 5";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam5 + ":00");
             }
             else if (alarmset == alarmJam6)
             {
                 alarmStatus.Text = "Jam Ke 6";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam6 + ":00");
             }
             else if (alarmset == alarmJam7)
             {
                 alarmStatus.Text = "Jam Ke 7";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam7 + ":00");
             }
             else if (alarmset == alarmJam8)
             {
                 alarmStatus.Text = "Jam Ke 8";
-                playAlarm(clocknow, alarmJamMasuk + ":00");
+                playAlarm(clocknow, alarmJam8 + ":00");
             }
             else
             {
