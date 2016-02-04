@@ -17,7 +17,7 @@ namespace Bell
     {
         DateTime now = new DateTime();
 
-        SoundPlayer alarmBell = new SoundPlayer(@"alarm\bell.wav");
+        SoundPlayer alarmBell;
         double duration = 5; //durasi alarm
 
         string clocknow;
@@ -131,67 +131,67 @@ namespace Bell
             if (alarmset == alarmJamMasuk)
             {
                 alarmStatus.Text = "Jam Masuk";
-                playAlarm(clocknow, alarmJamMasuk + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav",clocknow, alarmJamMasuk + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJamIstirahat)
             {
                 alarmStatus.Text = "Jam Istirahat";
-                playAlarm(clocknow, alarmJamIstirahat + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJamIstirahat + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJamPulang)
             {
                 alarmStatus.Text = "Jam Pulang";
-                playAlarm(clocknow, alarmJamPulang + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJamPulang + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam1)
             {
                 alarmStatus.Text = "Jam Ke 1";
-                playAlarm(clocknow, alarmJam1 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav",clocknow, alarmJam1 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam2)
             {
                 alarmStatus.Text = "Jam Ke 2";
-                playAlarm(clocknow, alarmJam2 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam2 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam3)
             {
                 alarmStatus.Text = "Jam Ke 3";
-                playAlarm(clocknow, alarmJam3 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam3 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam4)
             {
                 alarmStatus.Text = "Jam Ke 4";
-                playAlarm(clocknow, alarmJam4 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam4 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam5)
             {
                 alarmStatus.Text = "Jam Ke 5";
-                playAlarm(clocknow, alarmJam5 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam5 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam6)
             {
                 alarmStatus.Text = "Jam Ke 6";
-                playAlarm(clocknow, alarmJam6 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam6 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam7)
             {
                 alarmStatus.Text = "Jam Ke 7";
-                playAlarm(clocknow, alarmJam7 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam7 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam8)
             {
                 alarmStatus.Text = "Jam Ke 8";
-                playAlarm(clocknow, alarmJam8 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell.wav", clocknow, alarmJam8 + ":00"); //changed from alarmBell.Play();
             }
             else
             {
                 alarmStatus.Text = "Alarm off";
-                stopAlarm(); //changed from alarmBell.Stop();
             }
         }
 
-        private void playAlarm(string clock, string starttime) //New Play Function
+        private void playAlarm(string filelocation,string clock, string starttime) //New Play Function
         {//
+            alarmBell = new SoundPlayer(filelocation); //deklarasinya pindah kesini
             DateTime start = DateTime.ParseExact(starttime, "HH:mm:ss", CultureInfo.InvariantCulture); //start time
             DateTime stop = DateTime.ParseExact(starttime, "HH:mm:ss", CultureInfo.InvariantCulture).AddSeconds(duration); //stop time, add few second from start time
             DateTime now = DateTime.ParseExact(clock, "HH:mm:ss", CultureInfo.InvariantCulture); //current clock
@@ -199,15 +199,14 @@ namespace Bell
             {//
                 alarmBell.Play(); //play sound
             }//
-            else //others cond
+            else if (now > stop) //stop ketika udh melebihi waktu
+            {
+                alarmBell.Stop(); //stop sound
+            }
+            else //others condition
             {//
                 alarmBell.Stop(); //stop sound
             }//
-        }//
-
-        private void stopAlarm() //stop alarm function
-        {//
-            alarmBell.Stop(); //stop sound
         }//
 
         private void InputJam_Click(object sender, EventArgs e)
