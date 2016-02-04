@@ -131,57 +131,57 @@ namespace Bell
             if (alarmset == alarmJamMasuk)
             {
                 alarmStatus.Text = "Jam Masuk";
-                playAlarm(@"alarm\bell.wav",clocknow, alarmJamMasuk + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bellMasuk.wav",clocknow, alarmJamMasuk + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJamIstirahat)
             {
                 alarmStatus.Text = "Jam Istirahat";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJamIstirahat + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bellIstirahat.wav", clocknow, alarmJamIstirahat + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJamPulang)
             {
                 alarmStatus.Text = "Jam Pulang";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJamPulang + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bellPulang.wav", clocknow, alarmJamPulang + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam1)
             {
                 alarmStatus.Text = "Jam Ke 1";
-                playAlarm(@"alarm\bell.wav",clocknow, alarmJam1 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell1.wav",clocknow, alarmJam1 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam2)
             {
                 alarmStatus.Text = "Jam Ke 2";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam2 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell2.wav", clocknow, alarmJam2 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam3)
             {
                 alarmStatus.Text = "Jam Ke 3";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam3 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell3.wav", clocknow, alarmJam3 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam4)
             {
                 alarmStatus.Text = "Jam Ke 4";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam4 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell4.wav", clocknow, alarmJam4 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam5)
             {
                 alarmStatus.Text = "Jam Ke 5";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam5 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell5.wav", clocknow, alarmJam5 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam6)
             {
                 alarmStatus.Text = "Jam Ke 6";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam6 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell6.wav", clocknow, alarmJam6 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam7)
             {
                 alarmStatus.Text = "Jam Ke 7";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam7 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell7.wav", clocknow, alarmJam7 + ":00"); //changed from alarmBell.Play();
             }
             else if (alarmset == alarmJam8)
             {
                 alarmStatus.Text = "Jam Ke 8";
-                playAlarm(@"alarm\bell.wav", clocknow, alarmJam8 + ":00"); //changed from alarmBell.Play();
+                playAlarm(@"alarm\bell8.wav", clocknow, alarmJam8 + ":00"); //changed from alarmBell.Play();
             }
             else
             {
